@@ -82,15 +82,15 @@ def get_bbox_boundaries(shape):
 
     xmin = shape['points'][0][0]
     ymin = shape['points'][0][1]
-    xmax = shape['points'][2][0]
-    ymax = shape['points'][2][1]
+    xmax = shape['points'][1][0]
+    ymax = shape['points'][1][1]
     # swap if min is larger than max.
     xmin, xmax = sorted([xmin, xmax])
     ymin, ymax = sorted([ymin, ymax])
     # be care of the difference between your dataset image Coordinate and labelme imgViz Coordinate.
 
     # return (xmin, ymin, xmax, ymax)
-    return ymin, xmin, ymax, xmax
+    return xmin, ymin, xmax, ymax
 
 
 def get_basic_maker_and_xml(shape, filename):
